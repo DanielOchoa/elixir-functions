@@ -3,9 +3,9 @@
 
 # all?, each, filter, split, take
 defmodule Enums do
-  def all?([ head | tail ]), do: if !!head, do: Cenum.all?(tail), else: false
+  def all?([ head | tail ]), do: if !!head, do: Enums.all?(tail), else: false
   def all?([]), do: true
-  def all?([head | tail], fn_arg), do: if !!fn_arg.(head), do: Cenum.all?(tail, fn_arg), else: false
+  def all?([head | tail], fn_arg), do: if !!fn_arg.(head), do: Enums.all?(tail, fn_arg), else: false
   def all?([], _), do: true
 
   def each([], _), do: :ok
