@@ -56,13 +56,13 @@ defmodule Enums do
   # end
 
   # take, neg no. does not work
-  def mtake([head | tail], index) when index > 0 do
-    [ head | mtake(tail, index - 1) ]
+  def take([head | tail], index) when index > 0 do
+    [ head | take(tail, index - 1) ]
   end
-  def mtake(_, _), do: []
+  def take(_, _), do: []
 
   # flatten
-  def mflatten([]), do: []
-  def mflatten([head | tail]), do: mflatten(head) ++ mflatten(tail)
-  def mflatten(single), do: [single]
+  def flatten([]), do: []
+  def flatten([head | tail]), do: flatten(head) ++ flatten(tail)
+  def flatten(single), do: [single]
 end
